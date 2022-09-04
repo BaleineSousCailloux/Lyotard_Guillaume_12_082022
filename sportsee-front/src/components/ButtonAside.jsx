@@ -22,7 +22,7 @@ const Ico = styled.img`
   padding-top: 5px;
 `
 
-function Button({ type }) {
+function ButtonAside({ type }) {
   return (
     <IcoContainer>
       {(() => {
@@ -41,4 +41,4 @@ function Button({ type }) {
   )
 }
 
-export default Button
+export default ButtonAside

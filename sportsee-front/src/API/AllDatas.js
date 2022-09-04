@@ -1,15 +1,15 @@
-import { GetUserDatasMocked, GetUserDatas } from '../API/fetchDatas.js'
-import FormatUserDatas from '../API/dataFormaters/FormatUserDatas'
-import FormatUserActivity from '../API/dataFormaters/FormatUserActivity'
-import FormatUserAverage from '../API/dataFormaters/FormatUserAverage'
-import FormatUserPerformance from '../API/dataFormaters/FormatUserPerformance'
+import { GetUserDatasMocked, GetUserDatas } from './fetchDatas.js'
+import FormatUserDatas from './dataFormaters/FormatUserDatas'
+import FormatUserActivity from './dataFormaters/FormatUserActivity'
+import FormatUserAverage from './dataFormaters/FormatUserAverage'
+import FormatUserPerformance from './dataFormaters/FormatUserPerformance'
 
 
 export async function GetUserDataOk(online, userId) {
     let userDataOk
     async function GetUserData() {
       let userDatas
-      if (online === true) {
+      if (online) {
         userDatas = await GetUserDatas('data', userId)
         return userDatas
       } else {
@@ -26,7 +26,7 @@ export async function GetUserActivityOk(online, userId) {
     let userActivityOk
     async function GetUserActivity() {
       let userActivity
-      if (online === true) {
+      if (online) {
         userActivity = await GetUserDatas('activity', userId)
         return userActivity
       } else {
@@ -43,7 +43,7 @@ export async function GetUserPerformanceOk(online, userId) {
     let userPerformanceOk
     async function GetUserPerformance() {
       let userPerformance
-      if (online === true) {
+      if (online) {
         userPerformance = await GetUserDatas('performance', userId)
         return userPerformance
       } else {
@@ -60,7 +60,7 @@ export async function GetUserSessionsOk(online, userId) {
     let userSessionsOk
     async function GetUserSessions() {
       let userSessions
-      if (online === true) {
+      if (online) {
         userSessions = await GetUserDatas('averageSessions', userId)
         return userSessions
       } else {

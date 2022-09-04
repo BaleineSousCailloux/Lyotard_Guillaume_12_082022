@@ -1,5 +1,3 @@
-// import PropTypes from 'prop-types'
-
 const USER_MAIN_DATA = [
   {
     id: 12,
@@ -32,18 +30,6 @@ const USER_MAIN_DATA = [
     },
   },
 ]
-
-// USER_MAIN_DATA.propTypes = {
-//   id: PropTypes.number,
-//   firstName: PropTypes.string,
-//   lastName: PropTypes.string,
-//   age: PropTypes.number,
-//   todayScore: PropTypes.number,
-//   calorieCount: PropTypes.number,
-//   proteinCount: PropTypes.number,
-//   carbohydrateCount: PropTypes.number,
-//   lipidCount: PropTypes.number,
-// }
 
 const USER_ACTIVITY = [
   {

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Button from './Button'
+import ButtonAside from './ButtonAside'
 
 const CopyRight = styled.p`
   box-sizing: border-box;
@@ -19,7 +19,7 @@ const AsideContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   padding: 0 0 118px 0;
-  height: calc(100% - 91px);
+  height: 100%;
   width: 117px;
   background-color: #020203;
   align-items: center;
@@ -40,10 +40,10 @@ function AsideMenu() {
     <AsideContainer>
       <div></div>
       <VerticalNavContainer>
-        <Button type="yoga" />
-        <Button type="natation" />
-        <Button type="velo" />
-        <Button type="muscu" />
+        <ButtonAside type="yoga" />
+        <ButtonAside type="natation" />
+        <ButtonAside type="velo" />
+        <ButtonAside type="muscu" />
       </VerticalNavContainer>
       <CopyRight>Copyryght, SportSee 2020</CopyRight>
     </AsideContainer>
