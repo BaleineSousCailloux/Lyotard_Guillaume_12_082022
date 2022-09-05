@@ -106,8 +106,6 @@ function Profil() {
     GetAllDatas()
   }, [dataSourceOnline, userId])
 
-  console.log(datas?.userDatas?.nutriments)
-
   return (
     <Container>
       {isLoading ? (
@@ -143,7 +141,10 @@ function Profil() {
               </SecondGroup>
             </FirstBlock>
             <SecondBlock>
-              <ProfilNutriments data={datas?.userDatas?.nutrimentsCount()} />
+              <ProfilNutriments
+                nutriment={datas?.userDatas?.formatNutriments()}
+                quantity={datas?.userDatas?.nutrimentsCount()}
+              />
             </SecondBlock>
           </StatsContainer>
         </div>

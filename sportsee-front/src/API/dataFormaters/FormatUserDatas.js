@@ -3,11 +3,7 @@ export default class FormatUserDatas {
     this.id = datas.id
     this.infos = datas.userInfos
     this.userFirstName = this.infos.firstName
-    this.nutriments = datas.keyData
-    // this.cal = this.keyData.calorieCount
-    // this.prot = this.keyData.proteinCount
-    // this.glu = this.keyData.carbohydrateCount
-    // this.lip = this.keyData.lipidCount
+    this.keyData = datas.keyData
     this.todayScore = datas.todayScore || datas.score
   }
 
@@ -15,17 +11,43 @@ export default class FormatUserDatas {
     return this.todayScore * 100
   }
   nutrimentsCount() {
-    const calToKcal = (this.nutriments.calorieCount / 1000).toFixed(3)
+    const calToKcal = (this.keyData.calorieCount / 1000).toFixed(3)
     const calLegend = calToKcal.toString() + 'kCal'
     const gramLegend = (numb) => {
       return numb.toString() + 'g'
     }
     const arrayOfNutriments = [
       calLegend,
-      gramLegend(this.nutriments.proteinCount),
-      gramLegend(this.nutriments.carbohydrateCount),
-      gramLegend(this.nutriments.lipidCount),
+      gramLegend(this.keyData.proteinCount),
+      gramLegend(this.keyData.carbohydrateCount),
+      gramLegend(this.keyData.lipidCount),
     ]
     return arrayOfNutriments
+  }
+  formatNutriments() {
+    const myArray = Object.keys(this.keyData)
+    const myArrayTrad = myArray.map((item) => this.englishToFrench(item))
+    return myArrayTrad
+  }
+  englishToFrench(item) {
+    let trad = ''
+    switch (item) {
+      case 'calorieCount':
+        trad = 'Calories'
+        break
+      case 'proteinCount':
+        trad = 'Protéines'
+        break
+      case 'carbohydrateCount':
+        trad = 'Glucides'
+        break
+      case 'lipidCount':
+        trad = 'Lipides'
+        break
+      default:
+        console.log('problème de traduction')
+        break
+    }
+    return trad
   }
 }
