@@ -7,6 +7,7 @@ import {
   CartesianGrid,
   Tooltip,
 } from 'recharts'
+import PropTypes from 'prop-types'
 
 function ProfilLineChart({ data }) {
   return (
@@ -71,6 +72,10 @@ function ProfilLineChart({ data }) {
       </LineChart>
     </ResponsiveContainer>
   )
+}
+
+ProfilLineChart.propTypes = {
+  data: PropTypes.array.isRequired,
 }
 
 export default ProfilLineChart

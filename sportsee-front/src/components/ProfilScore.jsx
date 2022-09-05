@@ -4,6 +4,7 @@ import {
   ResponsiveContainer,
   PolarAngleAxis,
 } from 'recharts'
+import PropTypes from 'prop-types'
 
 function ProfilScore({ data }) {
   return (
@@ -77,6 +78,10 @@ function ProfilScore({ data }) {
       </RadialBarChart>
     </ResponsiveContainer>
   )
+}
+
+ProfilScore.propTypes = {
+  data: PropTypes.number.isRequired,
 }
 
 export default ProfilScore

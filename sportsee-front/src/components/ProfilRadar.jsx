@@ -6,6 +6,7 @@ import {
   PolarRadiusAxis,
   Radar,
 } from 'recharts'
+import PropTypes from 'prop-types'
 
 function ProfilRadar({ data }) {
   return (
@@ -38,6 +39,10 @@ function ProfilRadar({ data }) {
       </RadarChart>
     </ResponsiveContainer>
   )
+}
+
+ProfilRadar.propTypes = {
+  data: PropTypes.array.isRequired,
 }
 
 export default ProfilRadar

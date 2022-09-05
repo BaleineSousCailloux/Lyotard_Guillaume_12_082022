@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const IcoContainer = styled.div`
   box-sizing: border-box;
@@ -24,7 +25,7 @@ const Ico = styled.img`
 
 function ButtonAside({ type }) {
   return (
-    <IcoContainer>
+    <IcoContainer key={type}>
       {(() => {
         if (type) {
           return (
@@ -39,6 +40,10 @@ function ButtonAside({ type }) {
       })()}
     </IcoContainer>
   )
+}
+
+ButtonAside.propTypes = {
+  type: PropTypes.string.isRequired,
 }
 
 export default ButtonAside

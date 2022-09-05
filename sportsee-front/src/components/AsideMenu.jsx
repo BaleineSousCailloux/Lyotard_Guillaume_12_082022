@@ -40,10 +40,10 @@ function AsideMenu() {
     <AsideContainer>
       <div></div>
       <VerticalNavContainer>
-        <ButtonAside type="yoga" />
-        <ButtonAside type="natation" />
-        <ButtonAside type="velo" />
-        <ButtonAside type="muscu" />
+        <ButtonAside type={'yoga'} />
+        <ButtonAside type={'natation'} />
+        <ButtonAside type={'velo'} />
+        <ButtonAside type={'muscu'} />
       </VerticalNavContainer>
       <CopyRight>Copyryght, SportSee 2020</CopyRight>
     </AsideContainer>

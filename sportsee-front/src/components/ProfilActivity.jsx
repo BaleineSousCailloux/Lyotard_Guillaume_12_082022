@@ -8,6 +8,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts'
+import PropTypes from 'prop-types'
 
 const CustomTooltip = ({ active, payload }) => {
   if (active) {
@@ -99,6 +100,10 @@ const ProfilActivity = ({ data }) => {
       </BarChart>
     </ResponsiveContainer>
   )
+}
+
+ProfilActivity.propTypes = {
+  data: PropTypes.array.isRequired,
 }
 
 export default ProfilActivity
