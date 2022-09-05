@@ -4,8 +4,9 @@ import styled from 'styled-components'
 
 const Container = styled.div`
   box-sizing: border-box;
-  margin-left: 117px;
   display: flex;
+  height: 100%;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -21,7 +22,6 @@ const CardWrapperOff = styled.div`
   width: 400px;
   border-radius: 10px;
   background: #ff0101;
-  margin: 100px 20px 20px 20px;
 `
 const CardWrapperOn = styled.div`
   box-sizing: border-box;
@@ -33,7 +33,6 @@ const CardWrapperOn = styled.div`
   width: 400px;
   border-radius: 10px;
   background: #4dca22;
-  margin: 100px 20px 20px 20px;
 `
 
 const CardTitleContainer = styled.div`

@@ -17,10 +17,12 @@ const Nutriment = styled.div`
   height: 124px;
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 32px 0 32px 32px;
 `
 const IcoContainer = styled.div`
   box-sizing: border-box;
-  margin: 10px;
   width: 60px;
   height: 60px;
   display: flex;
@@ -46,7 +48,26 @@ const IcoContainer = styled.div`
 const Ico = styled.img`
   height: 20px;
   margin: 0;
-  padding-top: 5px;
+`
+const Legend = styled.div`
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-between;
+  margin: 0 0 0 24px;
+`
+const Quanty = styled.p`
+  margin: 0 0 2px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #282d30;
+`
+const Nutry = styled.p`
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #74798c;
 `
 
 const ProfilNutriments = ({ nutriment, quantity }) => {
@@ -76,8 +97,10 @@ const ProfilNutriments = ({ nutriment, quantity }) => {
                 alt={`icone des ${nut}`}
               />
             </IcoContainer>
-            <p>{count}</p>
-            <p>{nut}</p>
+            <Legend>
+              <Quanty>{count}</Quanty>
+              <Nutry>{nut}</Nutry>
+            </Legend>
           </Nutriment>
         )
       })}

@@ -5,8 +5,8 @@ import styled from 'styled-components'
 
 const CardsContainer = styled.div`
   box-sizing: border-box;
-  width: 900px;
-  height: 600px;
+  width: fit-content;
+  height: fit-content;
   display: flex;
   flex-direction: row;
   justify-content: center;
