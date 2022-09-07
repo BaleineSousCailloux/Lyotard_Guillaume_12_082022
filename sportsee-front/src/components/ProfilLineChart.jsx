@@ -24,8 +24,8 @@ const ToolContainer = styled.div`
 
 const ToolInfos = styled.p`
   font-weight: 500;
-  font-size: 9px;
-  line-height: 24px;
+  font-size: 0.6em;
+  line-height: 1.5em;
   color: #000000;
   text-align: center;
   margin: 0;
@@ -77,7 +77,7 @@ function ProfilLineChart({ data }) {
           margin={{ bottom: 20 }}
           fillOpacity={0.6}
           style={{ transform: 'scale(1)', transformOrigin: 'bottom' }}
-          tick={{ fill: '#FFFFFF', fontWeight: 500, fontSize: 12 }}
+          tick={{ fill: '#FFFFFF', fontWeight: 500, fontSize: '0.75em' }}
           tickMargin={10}
           axisLine={false}
         />
@@ -106,7 +106,7 @@ function ProfilLineChart({ data }) {
           textAnchor="start"
           dominantBaseline="middle"
           fill="#FFFFFF"
-          style={{ fontWeight: 500, opacity: 0.6 }}
+          style={{ fontWeight: 500, fontSize: '0.9em', opacity: 0.6 }}
         >
           Durée moyenne des{' '}
         </text>
@@ -118,7 +118,7 @@ function ProfilLineChart({ data }) {
           textAnchor="start"
           dominantBaseline="middle"
           fill="#FFFFFF"
-          style={{ fontWeight: 500, opacity: 0.6 }}
+          style={{ fontWeight: 500, fontSize: '0.9em', opacity: 0.6 }}
         >
           sessions
         </text>

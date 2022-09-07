@@ -8,13 +8,11 @@ import PropTypes from 'prop-types'
 
 function ProfilScore({ data }) {
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer>
       <RadialBarChart
         cx="50%"
         cy="50%"
         style={{ backgroundColor: '#FBFBFB' }}
-        width="100%"
-        height="100%"
         margin={{ top: 30, right: 30, bottom: 30, left: 30 }}
         innerRadius={70}
         barSize={10}
@@ -39,7 +37,7 @@ function ProfilScore({ data }) {
         />
         <text
           fontWeight="700"
-          fontSize={26}
+          fontSize="1.65em"
           fill="#282D30"
           x="50%"
           y="45%"
@@ -47,6 +45,7 @@ function ProfilScore({ data }) {
         >{`${data}%`}</text>
         <text
           fontWeight="500"
+          fontSize="1em"
           fill="#74798C"
           x="50%"
           y="55%"
@@ -56,9 +55,10 @@ function ProfilScore({ data }) {
         </text>
         <text
           fontWeight="500"
+          fontSize="1em"
           fill="#74798C"
           x="50%"
-          y="65%"
+          y="64%"
           textAnchor="middle"
         >
           objectif
@@ -66,12 +66,10 @@ function ProfilScore({ data }) {
         <text
           x="12%"
           y="15%"
-          width={147}
-          height={48}
           textAnchor="start"
           dominantBaseline="middle"
           fill="#20253A"
-          style={{ fontWeight: 500 }}
+          style={{ fontWeight: 500, fontSize: '1em' }}
         >
           Score{' '}
         </text>

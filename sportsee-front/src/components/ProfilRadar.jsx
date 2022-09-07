@@ -10,13 +10,12 @@ import PropTypes from 'prop-types'
 
 function ProfilRadar({ data }) {
   return (
-    <ResponsiveContainer width="100%" aspect={1}>
+    <ResponsiveContainer>
       <RadarChart
         style={{ backgroundColor: '#282D30' }}
-        outerRadius={90}
+        margin={{ top: 10, left: 5, right: 5, bottom: 10 }}
+        outerRadius="75%"
         data={data}
-        width="85%"
-        height="85%"
       >
         <PolarGrid radialLines={false} />
         <PolarAngleAxis
@@ -25,7 +24,7 @@ function ProfilRadar({ data }) {
           dataKey="type"
           dy={4}
           stroke="#FFF"
-          tick={{ fill: '#FFFFFF', fontSize: 12 }}
+          tick={{ fill: '#FFFFFF', fontSize: '0.75em' }}
         />
         <PolarRadiusAxis tick={false} tickCount={6} axisLine={false} />
 

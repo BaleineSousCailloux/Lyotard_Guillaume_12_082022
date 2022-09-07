@@ -51,7 +51,7 @@ const ProfilActivity = ({ data }) => {
         height="100%"
         data={data}
         margin={{
-          top: 80,
+          top: 70,
           right: 50,
           left: 45,
           bottom: 20,
@@ -68,7 +68,7 @@ const ProfilActivity = ({ data }) => {
           tick={{
             fill: '#9B9EAC',
             fontWeight: 500,
-            fontSize: 14,
+            fontSize: '0.85em',
           }}
           padding={{ left: -47, right: -48 }}
           tickMargin={16}
@@ -84,7 +84,7 @@ const ProfilActivity = ({ data }) => {
           tickLine={false}
           orientation="right"
           axisLine={false}
-          tick={{ fill: '#9B9EAC', fontWeight: 500, fontSize: 14 }}
+          tick={{ fill: '#9B9EAC', fontWeight: 500, fontSize: '0.85em' }}
           tickMargin={50}
         />
         <YAxis
@@ -101,12 +101,16 @@ const ProfilActivity = ({ data }) => {
           align="right"
           iconType={'circle'}
           iconSize={8}
-          width={277}
-          height={25}
-          wrapperStyle={{ top: 35, right: 26 }}
+          wrapperStyle={{ top: '10%', right: 26 }}
           formatter={(value) => {
             return (
-              <span style={{ color: '#74798C', fontSize: 14, fontWeight: 500 }}>
+              <span
+                style={{
+                  color: '#74798C',
+                  fontSize: '0.85em',
+                  fontWeight: 500,
+                }}
+              >
                 {value}
               </span>
             )
@@ -129,12 +133,10 @@ const ProfilActivity = ({ data }) => {
         <text
           x="5%"
           y="15%"
-          width={147}
-          height={48}
           textAnchor="start"
-          dominantBaseline="middle"
+          dominantBaseline="top"
           fill="#20253A"
-          style={{ fontWeight: 500 }}
+          style={{ fontSize: '1em', fontWeight: 500 }}
         >
           Activité quotidienne{' '}
         </text>

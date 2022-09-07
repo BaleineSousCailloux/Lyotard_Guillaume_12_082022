@@ -16,6 +16,7 @@ const MainContainer = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   width: 100vw;
   height: calc(100vh - 91px);
 `

@@ -17,12 +17,12 @@ import styled from 'styled-components'
 const MainCont = styled.div`
   box-sizing: border-box;
   height: 100%;
-  width: calc(100% - 117px);
-  padding: 55px 85px 90px 85px;
+  width: calc(100vw - 117px);
+  padding: 4% 5% 7% 7%;
   background: #ffffff;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   overflow: hidden;
 `
 
@@ -44,15 +44,14 @@ const StatsContainer = styled.div`
   flex-direction: row;
   flex-wrap: nowrap;
   box-sizing: border-box;
-  min-height: calc(100% - 200px);
+  height: calc(100% - 100px);
   width: 100%;
   justify-content: space-between;
 `
 const GraphContainer = styled.div`
   box-sizing: border-box;
-  margin: 30px 30px 0 0;
-  width: 20%;
-  height: 60%;
+  width: 30.5%;
+  height: 100%;
   border-radius: 5px;
   overflow: hidden;
 `
@@ -61,30 +60,25 @@ const FirstBlock = styled.div`
   flex-direction: column;
   box-sizing: border-box;
   justify-content: space-between;
-  min-width: 834px;
-  width: calc(100% - 288px);
-  margin-right: 30px;
-  min-height: 100%;
+  width: 72%;
+  height: 100%;
 `
 const SecondBlock = styled.div`
   box-sizing: border-box;
-  width: 258px;
-  min-height: 100%;
+  width: 23%;
+  height: 100%;
 `
 const FirstGroup = styled.div`
   box-sizing: border-box;
-  max-width: 100%;
-  min-height: 320px;
-  border-radius: 5px;
-  padding-right: 30px;
-  overflow: hidden;
+  width: 100%;
+  height: 55%;
 `
 const SecondGroup = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
-  max-width: 100%;
-  min-height: 263px;
+  width: 100%;
+  height: 41%;
   justify-content: space-between;
   flex-wrap: nowrap;
 `

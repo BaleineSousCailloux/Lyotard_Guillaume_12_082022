@@ -19,11 +19,11 @@ const Nutriment = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  padding: 32px 0 32px 32px;
+  padding: 32px 0 0 0;
 `
 const IcoContainer = styled.div`
   box-sizing: border-box;
-  width: 60px;
+  min-width: 60px;
   height: 60px;
   display: flex;
   flex-direction: column;
@@ -55,17 +55,17 @@ const Legend = styled.div`
   flex-direction: column;
   align-items: left;
   justify-content: space-between;
-  margin: 0 0 0 24px;
+  margin: 0 0 0 1.5em;
 `
 const Quanty = styled.p`
   margin: 0 0 2px 0;
-  font-size: 20px;
+  font-size: 1.25em;
   font-weight: 700;
   color: #282d30;
 `
 const Nutry = styled.p`
   margin: 0;
-  font-size: 14px;
+  font-size: 0.875em;
   font-weight: 500;
   color: #74798c;
 `
