@@ -6,16 +6,61 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
+  Rectangle,
 } from 'recharts'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
+
+const ToolContainer = styled.div`
+  box-sizing: border-box;
+  width: 40px;
+  height: 25px;
+  background: #ffffff;
+  margin: 0 5px 40px 5px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1px;
+`
+
+const ToolInfos = styled.p`
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  margin: 0;
+`
+
+const CustomTooltip = ({ active, payload }) => {
+  if (active) {
+    return (
+      <ToolContainer>
+        <ToolInfos>{`${payload[0].value} `}min</ToolInfos>
+      </ToolContainer>
+    )
+  }
+  return null
+}
+
+const CustomCursor = ({ points }) => {
+  return (
+    <Rectangle
+      fill="#000000"
+      opacity={0.0975}
+      x={points[1].x}
+      width={1000}
+      height={300}
+    />
+  )
+}
 
 function ProfilLineChart({ data }) {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <LineChart
         style={{ backgroundColor: '#FF0000' }}
-        width={258}
-        height={263}
+        width="100%"
+        height="100%"
         data={data}
         margin={{
           top: 50,
@@ -28,17 +73,25 @@ function ProfilLineChart({ data }) {
         <XAxis
           dataKey="type"
           tickLine={false}
-          fillOpacity={0.5}
-          style={{ transform: 'scale(0.9)', transformOrigin: 'bottom' }}
+          padding={{ left: 15, right: 15 }}
+          margin={{ bottom: 20 }}
+          fillOpacity={0.6}
+          style={{ transform: 'scale(1)', transformOrigin: 'bottom' }}
           tick={{ fill: '#FFFFFF', fontWeight: 500, fontSize: 12 }}
           tickMargin={10}
           axisLine={false}
-          interval="preserveStartEnd"
         />
-        <YAxis axisLine={false} tickLine={false} tick={false} />
-        <Tooltip />
+        <YAxis
+          axisLine={false}
+          tickLine={false}
+          tick={false}
+          type="number"
+          domain={['dataMin', 'dataMax + 30']}
+          padding={{ bottom: 15 }}
+        />
+        <Tooltip content={<CustomTooltip />} cursor={<CustomCursor />} />
         <Line
-          type="monotone"
+          type="natural"
           dataKey="result"
           stroke="#FFFFFF"
           dot={false}
@@ -53,7 +106,7 @@ function ProfilLineChart({ data }) {
           textAnchor="start"
           dominantBaseline="middle"
           fill="#FFFFFF"
-          style={{ fontWeight: 500, opacity: 0.5 }}
+          style={{ fontWeight: 500, opacity: 0.6 }}
         >
           Durée moyenne des{' '}
         </text>
@@ -65,7 +118,7 @@ function ProfilLineChart({ data }) {
           textAnchor="start"
           dominantBaseline="middle"
           fill="#FFFFFF"
-          style={{ fontWeight: 500, opacity: 0.5 }}
+          style={{ fontWeight: 500, opacity: 0.6 }}
         >
           sessions
         </text>

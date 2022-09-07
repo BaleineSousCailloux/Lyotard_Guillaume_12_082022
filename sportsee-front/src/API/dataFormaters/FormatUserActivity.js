@@ -5,8 +5,14 @@ export default class FormatUserActivity {
   }
 
   formatActivity() {
+    const formatDate = (date) => {
+      let maDate = new Date(date)
+      let myDay = maDate.getDate()
+      return myDay
+    }
+
     return this.sessions.map((item) => ({
-      day: (this.sessions.indexOf(item) + 1).toString(),
+      day: formatDate(item.day).toString(),
       kilogram: item.kilogram,
       calories: item.calories,
     }))

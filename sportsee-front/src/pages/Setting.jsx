@@ -6,7 +6,7 @@ const Container = styled.div`
   box-sizing: border-box;
   display: flex;
   height: 100%;
-  width: 100%;
+  width: calc(100% - 117px);
   flex-direction: column;
   justify-content: center;
   align-items: center;

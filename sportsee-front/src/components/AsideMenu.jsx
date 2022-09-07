@@ -17,8 +17,7 @@ const AsideContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   padding: 0 0 118px 0;
-  height: 100%;
-  max-width: 117px;
+  width: 117px;
   background-color: #020203;
   align-items: center;
 `

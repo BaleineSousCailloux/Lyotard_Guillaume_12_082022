@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useState, useContext, Fragment } from 'react'
 import { useParams } from 'react-router-dom'
 import { DataContext } from '../Utils/DataProvider'
 import {
@@ -17,18 +17,15 @@ import styled from 'styled-components'
 const MainCont = styled.div`
   box-sizing: border-box;
   height: 100%;
-  width: 100%;
+  width: calc(100% - 117px);
   padding: 55px 85px 90px 85px;
   background: #ffffff;
-`
-const Container = styled.div`
-  box-sizing: border-box;
-  height: 100%;
-  max-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
 `
+
 const Welcome = styled.div`
   box-sizing: border-box;
   width: fit-content;
@@ -54,8 +51,8 @@ const StatsContainer = styled.div`
 const GraphContainer = styled.div`
   box-sizing: border-box;
   margin: 30px 30px 0 0;
-  width: 258px;
-  height: 263px;
+  width: 20%;
+  height: 60%;
   border-radius: 5px;
   overflow: hidden;
 `
@@ -123,7 +120,7 @@ function Profil() {
       {isLoading ? (
         'Loading...'
       ) : (
-        <Container>
+        <Fragment>
           <Welcome>
             <Hi>
               <span>Bonjour</span>
@@ -159,7 +156,7 @@ function Profil() {
               />
             </SecondBlock>
           </StatsContainer>
-        </Container>
+        </Fragment>
       )}
     </MainCont>
   )

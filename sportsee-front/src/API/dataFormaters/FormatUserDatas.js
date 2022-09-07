@@ -12,7 +12,7 @@ export default class FormatUserDatas {
   }
   nutrimentsCount() {
     const calToKcal = (this.keyData.calorieCount / 1000).toFixed(3)
-    const calLegend = calToKcal.toString() + 'kCal'
+    const calLegend = calToKcal.toString().replace('.', ',') + 'kCal'
     const gramLegend = (numb) => {
       return numb.toString() + 'g'
     }

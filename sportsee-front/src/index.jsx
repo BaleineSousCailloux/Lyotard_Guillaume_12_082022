@@ -16,9 +16,8 @@ const MainContainer = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  width: 100vw;
   height: calc(100vh - 91px);
-  width: 100%;
 `
 
 const root = createRoot(document.getElementById('root'))

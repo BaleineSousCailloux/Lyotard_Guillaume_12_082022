@@ -3,7 +3,7 @@ import Profils from '../components/Profils'
 
 const Container = styled.div`
   height: 100%;
-  width: 100%;
+  width: calc(100% - 117px);
   box-sizing: border-box;
   display: flex;
   flex-direction: row;

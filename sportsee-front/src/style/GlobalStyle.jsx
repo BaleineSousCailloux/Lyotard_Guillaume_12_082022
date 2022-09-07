@@ -6,9 +6,6 @@ const StyledGlobalStyle = createGlobalStyle`
   }
 
   body {
-    box-sizing: border-box;
-    width: 100%;
-    height: 100vh;
     margin: 0;
     background: #ffffff;
 

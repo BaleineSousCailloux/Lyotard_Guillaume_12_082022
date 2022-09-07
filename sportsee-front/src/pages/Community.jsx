@@ -2,7 +2,8 @@ import styled from 'styled-components'
 
 const Container = styled.div`
   box-sizing: border-box;
-  margin-left: 117px;
+  width: calc(100% - 117px);
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
