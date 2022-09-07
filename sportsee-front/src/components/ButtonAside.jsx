@@ -29,7 +29,8 @@ function ButtonAside({ type }) {
       {(() => {
         if (type) {
           return (
-            <NavLink to={`/:id/${type}`}>
+            // <NavLink to={`/:id/${type}`}>
+            <NavLink to={'/soon'}>
               <Ico
                 src={require(`../assets/${type}.svg`)}
                 alt={`icone de ${type}`}

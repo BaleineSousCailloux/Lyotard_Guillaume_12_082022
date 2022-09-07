@@ -45,15 +45,27 @@ function Header() {
         </NavLink>
       </NavigationLink>
       <NavigationLink>
-        <NavLink
-          to={`/user/${defaultUser}`}
-          style={({ isActive }) => ({
-            color: '#ffffff',
-            textDecoration: isActive ? 'underline' : 'none',
-          })}
-        >
-          Profil
-        </NavLink>
+        {defaultUser ? (
+          <NavLink
+            to={`/user/${defaultUser}`}
+            style={({ isActive }) => ({
+              color: '#ffffff',
+              textDecoration: isActive ? 'underline' : 'none',
+            })}
+          >
+            Profil
+          </NavLink>
+        ) : (
+          <NavLink
+            to={`/not-found`}
+            style={({ isActive }) => ({
+              color: '#ffffff',
+              textDecoration: isActive ? 'underline' : 'none',
+            })}
+          >
+            Profil
+          </NavLink>
+        )}
       </NavigationLink>
       <NavigationLink>
         <NavLink

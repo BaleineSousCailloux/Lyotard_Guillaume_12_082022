@@ -101,7 +101,10 @@ function Profil() {
         const userSessions = await GetUserSessionsOk(dataSourceOnline, userId)
         setDatas({ userDatas, userActivity, userPerformance, userSessions })
       } catch (error) {
-        console.log('=====error=====', error)
+        console.log(
+          `=====échec de récupération de l'ensemble des données=====`,
+          error
+        )
       } finally {
         setIsLoading(false)
       }
@@ -129,13 +132,13 @@ function Profil() {
               </FirstGroup>
               <SecondGroup>
                 <GraphContainer>
-                  <ProfilRadar
-                    data={datas?.userPerformance?.formatForRadar().reverse()}
+                  <ProfilLineChart
+                    data={datas?.userSessions?.formatForLineChart()}
                   />
                 </GraphContainer>
                 <GraphContainer>
-                  <ProfilLineChart
-                    data={datas?.userSessions?.formatForLineChart()}
+                  <ProfilRadar
+                    data={datas?.userPerformance?.formatForRadar().reverse()}
                   />
                 </GraphContainer>
                 <GraphContainer>

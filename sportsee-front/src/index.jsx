@@ -1,14 +1,20 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom'
 import { DataProvider } from './Utils/DataProvider'
 import Home from './pages/Home'
 import Profil from './pages/Profil'
 import Setting from './pages/Setting'
 import Community from './pages/Community'
+import UnderConstruction from './pages/UnderConstruction'
+import Error404 from './pages/Error404'
 import Header from './components/Header'
 import AsideMenu from './components/AsideMenu'
-// import Error404 from './components/Error404'
 import styled from 'styled-components'
 import GlobalStyle from './style/GlobalStyle'
 
@@ -35,6 +41,9 @@ root.render(
             <Route path="/user/:userId" element={<Profil />} />
             <Route path="/setting" element={<Setting />} />
             <Route path="/community" element={<Community />} />
+            <Route path="/soon" element={<UnderConstruction />} />
+            <Route path="/not-found" element={<Error404 />} />
+            <Route path="*" element={<Navigate to="/not-found" />} />
           </Routes>
         </DataProvider>
       </MainContainer>

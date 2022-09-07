@@ -8,10 +8,12 @@ import PropTypes from 'prop-types'
 
 function ProfilScore({ data }) {
   return (
-    <ResponsiveContainer>
+    <ResponsiveContainer width="100%" height="100%">
       <RadialBarChart
         cx="50%"
         cy="50%"
+        width="100%"
+        height="100%"
         style={{ backgroundColor: '#FBFBFB' }}
         margin={{ top: 30, right: 30, bottom: 30, left: 30 }}
         innerRadius={70}
@@ -40,7 +42,7 @@ function ProfilScore({ data }) {
           fontSize="1.65em"
           fill="#282D30"
           x="50%"
-          y="45%"
+          y="46%"
           textAnchor="middle"
         >{`${data}%`}</text>
         <text

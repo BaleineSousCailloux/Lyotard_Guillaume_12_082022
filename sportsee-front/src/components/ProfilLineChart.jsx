@@ -19,6 +19,7 @@ const ToolContainer = styled.div`
   margin: 0 5px 40px 5px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding-top: 1px;
 `
 

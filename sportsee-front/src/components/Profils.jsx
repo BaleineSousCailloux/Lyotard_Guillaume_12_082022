@@ -20,14 +20,30 @@ function Profils() {
 
   return (
     <CardsContainer>
-      {users.map((user) => (
-        <NavLink to={`/user/${user.id}`} key={user.id}>
-          <Card
-            first={user.userInfos.firstName}
-            last={user.userInfos.lastName}
-          />
-        </NavLink>
-      ))}
+      {users.map((user, index) =>
+        user.id ? (
+          <NavLink to={`/user/${user.id}`} key={index}>
+            <Card
+              first={user.userInfos.firstName}
+              last={user.userInfos.lastName}
+            />
+          </NavLink>
+        ) : (
+          (() => {
+            console.log(
+              `l'utilisateur ${user.userInfos.firstName} ${user.userInfos.lastName} n'a pas d'id`
+            )
+            return (
+              <NavLink to={`/not-found`} key={index}>
+                <Card
+                  first={user.userInfos.firstName}
+                  last={user.userInfos.lastName}
+                />
+              </NavLink>
+            )
+          })()
+        )
+      )}
     </CardsContainer>
   )
 }
