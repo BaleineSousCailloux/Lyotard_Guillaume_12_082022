@@ -8,7 +8,7 @@
 
 ---
 
-![logo](src/assets/logo.png)
+![logo](sportsee-front/src/assets/logo.svg)
 
 ## Presentation
 
