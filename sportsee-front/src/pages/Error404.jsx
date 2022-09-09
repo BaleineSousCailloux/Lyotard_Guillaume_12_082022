@@ -34,7 +34,10 @@ const StyledLink = styled(Link)`
   text-align: center;
   margin: 150px 0 0 0;
 `
-
+/**
+ * 404 Error Page
+ * @returns Error Page for undefined urls or request error
+ */
 function Error404() {
   return (
     <Container>

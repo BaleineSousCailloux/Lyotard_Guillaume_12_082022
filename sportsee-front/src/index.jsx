@@ -1,3 +1,9 @@
+/**
+ * @file index.jsx est le fichier racine de l'app react
+ * @author Guillaume Lyotard
+ * @see https://github.com/BaleineSousCailloux/Lyotard_Guillaume_12_082022/tree/main/sportsee-front
+ */
+
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import {
@@ -26,7 +32,10 @@ const MainContainer = styled.div`
   width: 100vw;
   height: calc(100vh - 91px);
 `
-
+/**
+ * DOM Injector and Router
+ * @type {DOM}
+ */
 const root = createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>

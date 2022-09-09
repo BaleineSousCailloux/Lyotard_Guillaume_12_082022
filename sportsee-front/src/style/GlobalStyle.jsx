@@ -14,6 +14,10 @@ const StyledGlobalStyle = createGlobalStyle`
 
   }
 `
+/**
+ * Style global for all components
+ * @returns CSS for all(*) and for <body>
+ */
 function GlobalStyle() {
   return <StyledGlobalStyle />
 }

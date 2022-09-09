@@ -5,7 +5,12 @@ import {
   PolarAngleAxis,
 } from 'recharts'
 import PropTypes from 'prop-types'
-
+/**
+ * Component user's score
+ * @param {number} data user today score formated
+ * @returns Radial Bar Chart from Recharts library
+ * @see https://recharts.org/en-US/api/RadialBarChart
+ */
 function ProfilScore({ data }) {
   return (
     <ResponsiveContainer width="100%" height="100%">

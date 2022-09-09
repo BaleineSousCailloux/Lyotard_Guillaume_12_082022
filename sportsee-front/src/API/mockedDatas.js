@@ -1,3 +1,6 @@
+/**
+ * Mocked datas
+ */
 const USER_MAIN_DATA = [
   {
     id: 12,
@@ -31,6 +34,9 @@ const USER_MAIN_DATA = [
   },
 ]
 
+/**
+ * Mocked datas
+ */
 const USER_ACTIVITY = [
   {
     userId: 12,
@@ -114,6 +120,9 @@ const USER_ACTIVITY = [
   },
 ]
 
+/**
+ * Mocked datas
+ */
 const USER_AVERAGE_SESSIONS = [
   {
     userId: 12,
@@ -183,6 +192,9 @@ const USER_AVERAGE_SESSIONS = [
   },
 ]
 
+/**
+ * Mocked datas
+ */
 const USER_PERFORMANCE = [
   {
     userId: 12,

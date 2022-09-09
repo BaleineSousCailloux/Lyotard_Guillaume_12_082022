@@ -70,7 +70,13 @@ const Nutry = styled.p`
   color: #74798c;
 `
 
-const ProfilNutriments = ({ nutriment, quantity }) => {
+/**
+ * Component user's key datas (nutriments)
+ * @param {Array} nutriment user's nutriments labels in french
+ * @param {Array} quantity nutriments quantities formated
+ * @returns All cards of nutriments (icone, icone background, quantity and label)
+ */
+function ProfilNutriments({ nutriment, quantity }) {
   const uniformise = (element) => {
     if (typeof element !== 'string') {
       console.log('uniformisation impossible')

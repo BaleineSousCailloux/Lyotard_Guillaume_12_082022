@@ -5,11 +5,21 @@ import {
   USER_PERFORMANCE,
 } from './mockedDatas'
 
+/**
+ * @property {function} GetAllUsers to get all users
+ * @returns Array of users
+ */
 function GetAllUsers() {
   const allUsers = USER_MAIN_DATA
   return allUsers
 }
 
+/**
+ * @property {function} GetUserDatasMocked to get user's datas from mocked datas
+ * @param {string} datas target datas
+ * @param {number} urlId user's id from url
+ * @returns user target data or console error
+ */
 function GetUserDatasMocked(datas, urlId) {
   let userData = {}
   let formatId = Number(urlId)
@@ -31,7 +41,9 @@ function GetUserDatasMocked(datas, urlId) {
       break
     case 'averageSessions':
       try {
-        userData = USER_AVERAGE_SESSIONS.find((user) => user.userId === formatId)
+        userData = USER_AVERAGE_SESSIONS.find(
+          (user) => user.userId === formatId
+        )
       } catch (err) {
         console.log('===== user data error =====', err)
       }
@@ -50,6 +62,13 @@ function GetUserDatasMocked(datas, urlId) {
   return userData
 }
 
+/**
+ * @property {function} GetUserDatas to get user's datas from API
+ * @async
+ * @param {string} datas target datas
+ * @param {number} urlId user's id from url
+ * @returns user target data or console error
+ */
 async function GetUserDatas(datas, urlId) {
   let userData
   let formatId = Number(urlId)
@@ -95,8 +114,4 @@ async function GetUserDatas(datas, urlId) {
   return userData.data
 }
 
-export {
-  GetAllUsers,
-  GetUserDatasMocked,
-  GetUserDatas,
-}
+export { GetAllUsers, GetUserDatasMocked, GetUserDatas }

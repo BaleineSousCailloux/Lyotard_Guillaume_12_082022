@@ -55,6 +55,12 @@ const CustomCursor = ({ points }) => {
   )
 }
 
+/**
+ * Component user's sessions average
+ * @param {Array} data user's sessions length
+ * @returns Line chart from Recharts library
+ * @see https://recharts.org/en-US/api/LineChart
+ */
 function ProfilLineChart({ data }) {
   return (
     <ResponsiveContainer width="100%" height="100%">

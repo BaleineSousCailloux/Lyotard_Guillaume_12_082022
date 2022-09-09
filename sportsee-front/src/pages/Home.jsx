@@ -11,7 +11,10 @@ const Container = styled.div`
   align-items: center;
   background: #ffffff;
 `
-
+/**
+ * Home Page
+ * @returns All users
+ */
 function Home() {
   return (
     <Container>

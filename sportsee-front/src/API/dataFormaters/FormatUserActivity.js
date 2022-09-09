@@ -1,9 +1,20 @@
-export default class FormatUserActivity {
+/**
+ * Class to format activity data
+ */
+class FormatUserActivity {
+  /**
+   *
+   * @param {Array} datas raw
+   */
   constructor(datas) {
     this.id = datas.userId
     this.sessions = datas.sessions
   }
 
+  /**
+   * @property {function} formatActivity map and format datas
+   * @returns formated array with real day's number
+   */
   formatActivity() {
     const formatDate = (date) => {
       let maDate = new Date(date)
@@ -18,3 +29,5 @@ export default class FormatUserActivity {
     }))
   }
 }
+
+export default FormatUserActivity

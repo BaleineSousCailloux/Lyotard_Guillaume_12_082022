@@ -30,7 +30,10 @@ const VerticalNavContainer = styled.div`
   width: fit-content;
   align-items: center;
 `
-
+/**
+ * Component aside menu
+ * @returns left navigation bar with copyright
+ */
 function AsideMenu() {
   return (
     <AsideContainer>

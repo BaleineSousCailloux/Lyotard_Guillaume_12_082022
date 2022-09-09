@@ -1,4 +1,11 @@
-export default class FormatUserDatas {
+/**
+ * Class to format main user data
+ */
+class FormatUserDatas {
+  /**
+   *
+   * @param {Object} datas raw
+   */
   constructor(datas) {
     this.id = datas.id
     this.infos = datas.userInfos
@@ -7,9 +14,18 @@ export default class FormatUserDatas {
     this.todayScore = datas.todayScore || datas.score
   }
 
+  /**
+   * @property {function} formatScore
+   * @returns formated score
+   */
   formatScore() {
     return this.todayScore * 100
   }
+
+  /**
+   * @property {function} nutrimentsCount get quantites
+   * @returns Array formated quantities with unities
+   */
   nutrimentsCount() {
     const calToKcal = (this.keyData.calorieCount / 1000).toFixed(3)
     const calLegend = calToKcal.toString().replace('.', ',') + 'kCal'
@@ -24,11 +40,22 @@ export default class FormatUserDatas {
     ]
     return arrayOfNutriments
   }
+
+  /**
+   * @property {function} formatNutriments get Labels in french
+   * @returns Array of french's labels
+   */
   formatNutriments() {
     const myArray = Object.keys(this.keyData)
     const myArrayTrad = myArray.map((item) => this.englishToFrench(item))
     return myArrayTrad
   }
+
+  /**
+   * @property {function} englishToFrench traduction
+   * @param {string} item nutriment
+   * @returns french nutriment label
+   */
   englishToFrench(item) {
     let trad = ''
     switch (item) {
@@ -51,3 +78,5 @@ export default class FormatUserDatas {
     return trad
   }
 }
+
+export default FormatUserDatas

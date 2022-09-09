@@ -44,6 +44,12 @@ const Gradient = styled.div`
 //   object-fit: cover;
 // `
 
+/**
+ * Component profil's card
+ * @param {string} first first name
+ * @param {string} last last name
+ * @returns styled card of the profil
+ */
 function Card({ first, last }) {
   return (
     <CardWrapper>

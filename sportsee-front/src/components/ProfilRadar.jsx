@@ -8,12 +8,18 @@ import {
 } from 'recharts'
 import PropTypes from 'prop-types'
 
+/**
+ * Component user's performances datas
+ * @param {Array} data  user' performance formated
+ * @returns Radar Chart from Recharts library
+ * @see https://recharts.org/en-US/api/RadarChart
+ */
 function ProfilRadar({ data }) {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <RadarChart
         style={{ backgroundColor: '#282D30' }}
-        margin={{ left: 25, right: 25 }}
+        margin={{ top: 10, left: 25, right: 25, bottom: 10 }}
         outerRadius="85%"
         data={data}
         width="100%"

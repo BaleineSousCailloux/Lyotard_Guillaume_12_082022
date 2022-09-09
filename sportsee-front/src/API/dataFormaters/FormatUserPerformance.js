@@ -1,9 +1,21 @@
-export default class FormatUserPerformance {
+/**
+ * Class to format performances data
+ */
+class FormatUserPerformance {
+  /**
+   *
+   * @param {Array} datas raw
+   */
   constructor(datas) {
     this.id = datas.userId
     this.kind = datas.kind
     this.data = datas.data
   }
+
+  /**
+   * @property {function} formatForRadar map 2 arrays in one and format datas
+   * @returns formated array with label and value
+   */
   formatForRadar() {
     return this.data.map((item) => ({
       type: this.englishToFrench(this.kind[item.kind]),
@@ -11,6 +23,11 @@ export default class FormatUserPerformance {
     }))
   }
 
+  /**
+   * @property {function} englishToFrench traduction
+   * @param {array} kind array of labels
+   * @returns french labels
+   */
   englishToFrench(kind) {
     let trad = ''
     switch (kind) {
@@ -39,3 +56,5 @@ export default class FormatUserPerformance {
     return trad
   }
 }
+
+export default FormatUserPerformance

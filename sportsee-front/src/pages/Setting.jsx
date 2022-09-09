@@ -58,7 +58,10 @@ const Gradient = styled.div`
   background: linear-gradient(#ffffff00, #00000050);
   position: absolute;
 `
-
+/**
+ * Settings Page
+ * @returns Active switch between Offline Datas (mocked) and Online Datas (API)
+ */
 function Setting() {
   const { ToogleDataSource, dataSourceOnline } = useContext(DataContext)
 

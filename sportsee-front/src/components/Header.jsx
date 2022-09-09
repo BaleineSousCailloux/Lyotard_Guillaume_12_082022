@@ -27,6 +27,10 @@ const NavigationLink = styled.div`
   font-size: 24px;
 `
 
+/**
+ * Component Header
+ * @returns Top navigation bar with logo
+ */
 function Header() {
   const users = GetAllUsers()
   const defaultUser = users[0].id

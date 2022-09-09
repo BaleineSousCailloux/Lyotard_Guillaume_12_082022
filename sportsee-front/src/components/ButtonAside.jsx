@@ -23,6 +23,11 @@ const Ico = styled.img`
   padding-top: 5px;
 `
 
+/**
+ * Component button for aside menu
+ * @param {string} type sport
+ * @returns styled and personalized button
+ */
 function ButtonAside({ type }) {
   return (
     <IcoContainer key={type}>

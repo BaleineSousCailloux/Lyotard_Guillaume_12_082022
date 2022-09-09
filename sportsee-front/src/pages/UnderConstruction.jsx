@@ -35,10 +35,16 @@ const StyledLink = styled(Link)`
   margin: 150px 0 0 0;
 `
 
+/**
+ * Under construction Page content
+ * @returns Page"under construction"
+ */
 function UnderConstruction() {
   return (
     <Container>
-      <ErrorNumber>Cette fonctionnalité est en construction...</ErrorNumber>
+      <ErrorNumber>
+        Cette fonctionnalité est en cours de développement.
+      </ErrorNumber>
       <Oups>Revenez voir prochainement 😉</Oups>
       <StyledLink to="/">Retourner à l'acccueil</StyledLink>
     </Container>

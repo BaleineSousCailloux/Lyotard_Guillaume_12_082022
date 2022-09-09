@@ -31,6 +31,13 @@ const ToolInfos = styled.p`
   margin: 0;
 `
 
+/**
+ * Function custom the tooltip
+ * @param active
+ * @param payload
+ * @returns Stiled tooltip with kg and kcal of active day
+ * @see https://recharts.org/en-US/api/BarChart
+ */
 const CustomTooltip = ({ active, payload }) => {
   if (active) {
     return (
@@ -43,7 +50,12 @@ const CustomTooltip = ({ active, payload }) => {
   return null
 }
 
-const ProfilActivity = ({ data }) => {
+/**
+ * Component user's activity
+ * @param {Array} data user's activity datas (kg and calories by days)
+ * @returns Bar Chart from Recharts library
+ */
+function ProfilActivity({ data }) {
   return (
     <ResponsiveContainer>
       <BarChart

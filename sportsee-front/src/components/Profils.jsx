@@ -15,6 +15,10 @@ const CardsContainer = styled.div`
   padding: 0;
 `
 
+/**
+ * Component for all profils display, and link with their profil's page
+ * @returns all profils cards
+ */
 function Profils() {
   const users = GetAllUsers()
 

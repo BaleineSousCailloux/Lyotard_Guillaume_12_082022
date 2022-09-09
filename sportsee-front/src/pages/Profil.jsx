@@ -83,6 +83,10 @@ const SecondGroup = styled.div`
   flex-wrap: nowrap;
 `
 
+/**
+ * Dashboard Page (default = main user = first user in datas)
+ * @returns All Graphs and infos based on user datas
+ */
 function Profil() {
   const { userId } = useParams()
   const { dataSourceOnline } = useContext(DataContext)

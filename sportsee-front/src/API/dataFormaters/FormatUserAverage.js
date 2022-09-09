@@ -1,9 +1,20 @@
-export default class FormatUserAverage {
+/**
+ * Class to format sessions average data
+ */
+class FormatUserAverage {
+  /**
+   *
+   * @param {Array} datas raw
+   */
   constructor(datas) {
     this.id = datas.userId
     this.sessions = datas.sessions
   }
 
+  /**
+   * @property {function} formatForLineChart map and format datas
+   * @returns formated array with label of day and session length
+   */
   formatForLineChart() {
     return this.sessions.map((item) => ({
       type: this.numberToDay(item.day),
@@ -11,6 +22,11 @@ export default class FormatUserAverage {
     }))
   }
 
+  /**
+   * @property {function} numberToDay get label of day
+   * @param {number} day
+   * @returns label of day
+   */
   numberToDay(day) {
     let change = ''
     switch (day) {
@@ -42,3 +58,5 @@ export default class FormatUserAverage {
     return change
   }
 }
+
+export default FormatUserAverage
