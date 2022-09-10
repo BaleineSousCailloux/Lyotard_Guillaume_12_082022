@@ -1,5 +1,5 @@
 /**
- * @file index.jsx est le fichier racine de l'app react
+ * @file is the launcher of the App React
  * @author Guillaume Lyotard
  * @see https://github.com/BaleineSousCailloux/Lyotard_Guillaume_12_082022/tree/main/sportsee-front
  */

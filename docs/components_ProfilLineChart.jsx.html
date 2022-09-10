@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/ProfilLineChart.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/ProfilLineChart.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import {
+  ResponsiveContainer,
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Rectangle,
+} from 'recharts'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+
+const ToolContainer = styled.div`
+  box-sizing: border-box;
+  width: 40px;
+  height: 25px;
+  background: #ffffff;
+  margin: 0 5px 40px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 1px;
+`
+
+const ToolInfos = styled.p`
+  font-weight: 500;
+  font-size: 0.6em;
+  line-height: 1.5em;
+  color: #000000;
+  text-align: center;
+  margin: 0;
+`
+
+const CustomTooltip = ({ active, payload }) => {
+  if (active) {
+    return (
+      &lt;ToolContainer>
+        &lt;ToolInfos>{`${payload[0].value} `}min&lt;/ToolInfos>
+      &lt;/ToolContainer>
+    )
+  }
+  return null
+}
+
+const CustomCursor = ({ points }) => {
+  return (
+    &lt;Rectangle
+      fill="#000000"
+      opacity={0.0975}
+      x={points[1].x}
+      width={1000}
+      height={300}
+    />
+  )
+}
+
+/**
+ * Component user's sessions average
+ * @param {Array} data user's sessions length
+ * @returns Line chart from Recharts library
+ * @see https://recharts.org/en-US/api/LineChart
+ */
+function ProfilLineChart({ data }) {
+  return (
+    &lt;ResponsiveContainer width="100%" height="100%">
+      &lt;LineChart
+        style={{ backgroundColor: '#FF0000' }}
+        width="100%"
+        height="100%"
+        data={data}
+        margin={{
+          top: 50,
+          right: -2,
+          left: -60,
+          bottom: 10,
+        }}
+      >
+        &lt;CartesianGrid vertical={false} horizontal={false} />
+        &lt;XAxis
+          dataKey="type"
+          tickLine={false}
+          padding={{ left: 15, right: 15 }}
+          margin={{ bottom: 20 }}
+          fillOpacity={0.6}
+          style={{ transform: 'scale(1)', transformOrigin: 'bottom' }}
+          tick={{ fill: '#FFFFFF', fontWeight: 500, fontSize: '0.75em' }}
+          tickMargin={10}
+          axisLine={false}
+        />
+        &lt;YAxis
+          axisLine={false}
+          tickLine={false}
+          tick={false}
+          type="number"
+          domain={['dataMin', 'dataMax + 30']}
+          padding={{ bottom: 15 }}
+        />
+        &lt;Tooltip content={&lt;CustomTooltip />} cursor={&lt;CustomCursor />} />
+        &lt;Line
+          type="natural"
+          dataKey="result"
+          stroke="#FFFFFF"
+          dot={false}
+          opacity={0.8}
+          strokeWidth={2}
+        />
+        &lt;text
+          x="12%"
+          y="15%"
+          width={147}
+          height={48}
+          textAnchor="start"
+          dominantBaseline="middle"
+          fill="#FFFFFF"
+          style={{ fontWeight: 500, fontSize: '0.9em', opacity: 0.6 }}
+        >
+          Durée moyenne des{' '}
+        &lt;/text>
+        &lt;text
+          x="12%"
+          y="25%"
+          width={147}
+          height={48}
+          textAnchor="start"
+          dominantBaseline="middle"
+          fill="#FFFFFF"
+          style={{ fontWeight: 500, fontSize: '0.9em', opacity: 0.6 }}
+        >
+          sessions
+        &lt;/text>
+      &lt;/LineChart>
+    &lt;/ResponsiveContainer>
+  )
+}
+
+ProfilLineChart.propTypes = {
+  data: PropTypes.array.isRequired,
+}
+
+export default ProfilLineChart
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="FormatUserActivity.html">FormatUserActivity</a></li><li><a href="FormatUserAverage.html">FormatUserAverage</a></li><li><a href="FormatUserDatas.html">FormatUserDatas</a></li><li><a href="FormatUserPerformance.html">FormatUserPerformance</a></li></ul><h3>Global</h3><ul><li><a href="global.html#AsideMenu">AsideMenu</a></li><li><a href="global.html#ButtonAside">ButtonAside</a></li><li><a href="global.html#Card">Card</a></li><li><a href="global.html#Community">Community</a></li><li><a href="global.html#CustomTooltip">CustomTooltip</a></li><li><a href="global.html#DataContext">DataContext</a></li><li><a href="global.html#DataProvider">DataProvider</a></li><li><a href="global.html#Error404">Error404</a></li><li><a href="global.html#GetAllUsers">GetAllUsers</a></li><li><a href="global.html#GetUserActivityOk">GetUserActivityOk</a></li><li><a href="global.html#GetUserDataOk">GetUserDataOk</a></li><li><a href="global.html#GetUserDatas">GetUserDatas</a></li><li><a href="global.html#GetUserDatasMocked">GetUserDatasMocked</a></li><li><a href="global.html#GetUserPerformanceOk">GetUserPerformanceOk</a></li><li><a href="global.html#GetUserSessionsOk">GetUserSessionsOk</a></li><li><a href="global.html#GlobalStyle">GlobalStyle</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#Profil">Profil</a></li><li><a href="global.html#ProfilActivity">ProfilActivity</a></li><li><a href="global.html#ProfilLineChart">ProfilLineChart</a></li><li><a href="global.html#ProfilNutriments">ProfilNutriments</a></li><li><a href="global.html#ProfilRadar">ProfilRadar</a></li><li><a href="global.html#Profils">Profils</a></li><li><a href="global.html#ProfilScore">ProfilScore</a></li><li><a href="global.html#root">root</a></li><li><a href="global.html#Setting">Setting</a></li><li><a href="global.html#UnderConstruction">UnderConstruction</a></li><li><a href="global.html#USER_ACTIVITY">USER_ACTIVITY</a></li><li><a href="global.html#USER_AVERAGE_SESSIONS">USER_AVERAGE_SESSIONS</a></li><li><a href="global.html#USER_MAIN_DATA">USER_MAIN_DATA</a></li><li><a href="global.html#USER_PERFORMANCE">USER_PERFORMANCE</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Sat Sep 10 2022 13:52:01 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

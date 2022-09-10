@@ -32,7 +32,7 @@ const VerticalNavContainer = styled.div`
 `
 /**
  * Component aside menu
- * @returns left navigation bar with copyright
+ * @returns left navigation bar with sports buttons
  */
 function AsideMenu() {
   return (

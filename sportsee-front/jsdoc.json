@@ -10,14 +10,14 @@
   },
   "plugins": ["plugins/markdown"],
   "templates": {
-    "cleverLinks": false,
-    "monospaceLinks": false
+    "cleverLinks": true,
+    "monospaceLinks": true
   },
   "opts": {
     "recurse": true,
     "verbose": true,
     "encoding": "utf8",
-    "destination": "./docs/",
+    "destination": "../docs",
     "readme": "./README.md",
     "template": "./default"
   }
