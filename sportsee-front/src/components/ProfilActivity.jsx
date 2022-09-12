@@ -146,7 +146,6 @@ function ProfilActivity({ data }) {
           x="5%"
           y="15%"
           textAnchor="start"
-          dominantBaseline="top"
           fill="#20253A"
           style={{ fontSize: '1em', fontWeight: 500 }}
         >

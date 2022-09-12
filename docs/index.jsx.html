@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/ButtonAside.jsx</title>
+    <title>JSDoc: Source: index.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/ButtonAside.jsx</h1>
+    <h1 class="page-title">Source: index.jsx</h1>
 
     
 
@@ -26,61 +26,67 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import React from 'react'
-import { NavLink } from 'react-router-dom'
-import styled from 'styled-components'
-import PropTypes from 'prop-types'
-
-const IcoContainer = styled.div`
-  box-sizing: border-box;
-  margin: 10px;
-  width: 64px;
-  height: 64px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 6px;
-  overflow: hidden;
-  background: #ffffff;
-`
-
-const Ico = styled.img`
-  height: 32px;
-  margin: 0;
-  padding-top: 5px;
-`
-
-/**
- * Component button for aside menu
- * @param {string} type sport
- * @returns styled and personalized button
+            <pre class="prettyprint source linenums"><code>/**
+ * @file is the launcher of the App React
+ * @author Guillaume Lyotard
+ * @see https://github.com/BaleineSousCailloux/Lyotard_Guillaume_12_082022/tree/main/sportsee-front
  */
-function ButtonAside({ type }) {
-  return (
-    &lt;IcoContainer key={type}>
-      {(() => {
-        if (type) {
-          return (
-            // &lt;NavLink to={`/:id/${type}`}>
-            &lt;NavLink to={'/soon'}>
-              &lt;Ico
-                src={require(`../assets/${type}.svg`)}
-                alt={`icone de ${type}`}
-              />
-            &lt;/NavLink>
-          )
-        }
-      })()}
-    &lt;/IcoContainer>
-  )
-}
 
-ButtonAside.propTypes = {
-  type: PropTypes.string.isRequired,
-}
+import React from 'react'
+import { createRoot } from 'react-dom/client'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom'
+import { DataProvider } from './Utils/DataProvider'
+import Home from './pages/Home'
+import Profil from './pages/Profil'
+import Setting from './pages/Setting'
+import Community from './pages/Community'
+import UnderConstruction from './pages/UnderConstruction'
+import Error404 from './pages/Error404'
+import Header from './components/Header'
+import AsideMenu from './components/AsideMenu'
+import styled from 'styled-components'
+import GlobalStyle from './style/GlobalStyle'
 
-export default ButtonAside
+const MainContainer = styled.div`
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100vw;
+  height: calc(100vh - 91px);
+`
+/**
+ * DOM Injector and Router
+ * @type {DOM}
+ */
+const root = createRoot(document.getElementById('root'))
+root.render(
+  &lt;React.StrictMode>
+    &lt;Router>
+      &lt;GlobalStyle />
+      &lt;Header />
+      &lt;MainContainer>
+        &lt;AsideMenu />
+        &lt;DataProvider>
+          &lt;Routes>
+            &lt;Route path="/" element={&lt;Home />} />
+            &lt;Route path="/user/:userId" element={&lt;Profil />} />
+            &lt;Route path="/setting" element={&lt;Setting />} />
+            &lt;Route path="/community" element={&lt;Community />} />
+            &lt;Route path="/soon" element={&lt;UnderConstruction />} />
+            &lt;Route path="/not-found" element={&lt;Error404 />} />
+            &lt;Route path="*" element={&lt;Navigate to="/not-found" />} />
+          &lt;/Routes>
+        &lt;/DataProvider>
+      &lt;/MainContainer>
+    &lt;/Router>
+  &lt;/React.StrictMode>
+)
 </code></pre>
         </article>
     </section>

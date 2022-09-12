@@ -13,7 +13,7 @@ import PropTypes from 'prop-types'
  */
 function ProfilScore({ data }) {
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer>
       <RadialBarChart
         cx="50%"
         cy="55%"

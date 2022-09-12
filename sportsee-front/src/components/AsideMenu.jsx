@@ -26,7 +26,7 @@ const VerticalNavContainer = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  height: fit-content
+  height: fit-content;
   width: fit-content;
   align-items: center;
 `

@@ -53,7 +53,7 @@ const Legend = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: start;
   justify-content: space-between;
   margin: 0 0 0 1.5em;
 `

@@ -16,7 +16,7 @@ import PropTypes from 'prop-types'
  */
 function ProfilRadar({ data }) {
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer>
       <RadarChart
         style={{ backgroundColor: '#282D30' }}
         margin={{ top: 10, left: 25, right: 25, bottom: 10 }}

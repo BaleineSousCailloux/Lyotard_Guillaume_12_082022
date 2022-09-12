@@ -63,7 +63,7 @@ const CustomCursor = ({ points }) => {
  */
 function ProfilLineChart({ data }) {
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer>
       <LineChart
         style={{ backgroundColor: '#FF0000' }}
         width="100%"

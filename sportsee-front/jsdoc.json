@@ -17,7 +17,7 @@
     "recurse": true,
     "verbose": true,
     "encoding": "utf8",
-    "destination": "../docs",
+    "destination": "./docs",
     "readme": "./README.md",
     "template": "./default"
   }

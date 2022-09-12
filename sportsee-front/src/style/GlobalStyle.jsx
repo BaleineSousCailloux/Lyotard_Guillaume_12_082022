@@ -9,7 +9,7 @@ const StyledGlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     background: #ffffff;
-    font-size: 100%
+    font-size: 100%;
     
 
   }

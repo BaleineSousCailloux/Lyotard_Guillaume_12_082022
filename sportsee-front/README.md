@@ -36,6 +36,16 @@ SportSee project is an application for sportive people that want to follow their
   open a new terminal and run `cd sportsee-front` command,
   then run the `yarn start` command will allow you to run the application on http://localhost:3000
 
+## Documentation
+
+open a new terminal and run `cd sportsee-front` command, then run the `yarn doc` command to generate the documentation.
+To access the JSDoc, launch SPORTSEE/docs/index.html with live-server
+
+## HTML Validations
+
+- [AChecker](./docs/validations/Achecker.png)
+- [W3C](./docs/validations/Achecker.png)
+
 ## Author
 
 Guillaume Lyotard
